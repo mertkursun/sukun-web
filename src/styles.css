@@ -1,0 +1,40 @@
+:root {
+  --night: #0B1533;
+  --night-deep: #070D22;
+  --card: #131E3F;
+  --gold: #E8B65A;
+  --gold-soft: #C9A36A;
+  --cream: #F5EEE2;
+  --text: #E8ECF4;
+  --muted: rgba(232, 236, 244, 0.55);
+  --dim: rgba(232, 236, 244, 0.35);
+  --stroke: rgba(232, 236, 244, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: var(--night);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+button { font-family: inherit; }
+
+a { color: inherit; }
+
+img { max-width: 100%; }
+
+::selection { background: var(--gold); color: var(--night); }
+
+/* reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
