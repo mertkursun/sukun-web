@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { P } from '../theme.js';
 import { LOGO } from '../components/common.jsx';
 import { useLang } from '../i18n.jsx';
+import { useIsMobile } from '../hooks/useIsMobile.js';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -53,6 +54,7 @@ const paragraph = { fontSize: 15.5, color: 'rgba(245,238,226,.78)', margin: '0 0
 
 export default function Privacy() {
   const { t, toggle } = useLang();
+  const mob = useIsMobile();
   return (
     <div style={{ minHeight: '100vh', background: P.night, color: P.text }}>
       <header
@@ -60,7 +62,7 @@ export default function Privacy() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '22px 48px',
+          padding: mob ? '16px 20px' : '22px 48px',
           borderBottom: `1px solid ${P.stroke}`,
           position: 'sticky',
           top: 0,
